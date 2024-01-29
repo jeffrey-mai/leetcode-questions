@@ -1,6 +1,6 @@
 import diameterOfBinaryTree from '../easy/543-diameter-of-binary-tree';
 
-describe('6-zigzag-conversion test', () => {
+describe('543-diameter-of-binary-tree test', () => {
   class TreeNode {
     val: number
     left: TreeNode | null
@@ -12,7 +12,7 @@ describe('6-zigzag-conversion test', () => {
     }
   }
 
-  it('input: [1,2,3,4,5]', () => {
+  it('input: [1,2,3,4,5] (Binary tree)', () => {
     const test = new TreeNode(1);
     test.left = new TreeNode(2);
     test.right = new TreeNode(3);
@@ -21,7 +21,7 @@ describe('6-zigzag-conversion test', () => {
     expect(diameterOfBinaryTree(test)).toEqual(3);
   })
 
-  it('input: [1,2]', () => {
+  it('input: [1,2] (Binary tree)', () => {
     const test = new TreeNode(1);
     test.left = new TreeNode(2);
     expect(diameterOfBinaryTree(test)).toEqual(1);

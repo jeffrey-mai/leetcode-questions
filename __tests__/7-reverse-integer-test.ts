@@ -1,6 +1,6 @@
 import reverse from '../medium/7-reverse-integer';
 
-describe('6-zigzag-conversion test', () => {
+describe('7-reverse-integer test', () => {
   it('input: 123', () => {
     expect(reverse(123)).toEqual(321);
   })
