@@ -1,7 +1,7 @@
 // 
 
 function topKFrequent(nums: number[], k: number): number[] {
-  const map: any = new Map(), ans = [];
+  const map = new Map(), ans = [];
   for(const num of nums){
     map.set(num, map.get(num) + 1 || 1);
   }
