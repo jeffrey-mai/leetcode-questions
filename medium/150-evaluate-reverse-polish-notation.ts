@@ -5,10 +5,10 @@ interface OperandMapping {
 }
 
 const operandMapping: OperandMapping = {
-  '+': (a, b)=> a+b,
-  '-': (a, b) => a-b,
-  '*': (a, b) => a*b,
-  '/': (a, b) => Math.trunc(a/b),
+  '+': (a,b) => a+b,
+  '-': (a,b) => a-b,
+  '*': (a,b) => a*b,
+  '/': (a,b) => Math.trunc(a/b),
 }
 
 function evalRPN(tokens: string[]): number {
@@ -44,21 +44,21 @@ function evalRPN(tokens: string[]): number {
   // }
   // return stack[0];
 
-  let evalStack: number[] = [];
+  let stack: number[] = [];
   for(let token of tokens) {
-    if (token in operandMapping) {
-      const b = evalStack.pop();
-      const a = evalStack.pop();
+    if(token in operandMapping) {
+      const b = stack.pop();
+      const a = stack.pop();
       if(a !== undefined && b !== undefined){
         const operationRes = operandMapping[token](a,b);
-        evalStack.push(operationRes);
+        stack.push(operationRes);
       } else {
         throw new Error('Insufficient operands in stack for operation');
       }
     } 
-    else evalStack.push(Number(token));
+    else stack.push(Number(token));
   }
-  return evalStack[0]
+  return stack[0]
 };
 
 console.log(evalRPN(["4","13","5","/","+"]));
