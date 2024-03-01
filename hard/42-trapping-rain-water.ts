@@ -14,8 +14,19 @@ function trap(height: number[]): number {
     }
   }
   return water;
+
+  // let left = 1, right = height.length, ans = 0, leftMax = 0;
+  // for(let i = 1; i < height.length; i++){
+  //   const length = Math.min(height[right], height[left]);
+  //   if(height[left] <= height[right] && length > height[left]) ans += length - height[left++];
+  //   else{
+  //     right--;
+  //     if(height[right] < height[right+1]) ans += height[right+1] - height[right];
+  //   }
+  // }
+  // return ans;
 };
 
-console.log(trap([0,1,0,2,1,0,1,3,2,1,2,1]));
+console.log(trap([4,2,0,3,2,5]));
 
 export default trap;
