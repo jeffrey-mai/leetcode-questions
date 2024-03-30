@@ -1,6 +1,5 @@
 from typing import List
 
-
 class Solution:
   def groupAnagrams(self, strs: List[str]) -> List[List[str]]:
     ans, cache = [], {}
@@ -12,6 +11,5 @@ class Solution:
           cache[sortedStr] = len(ans)
           ans.append([strs[i]])
     return ans
-
 
 print(Solution().groupAnagrams(["eat", "tea", "tan", "ate", "nat", "bat"]))
