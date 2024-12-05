@@ -8,10 +8,11 @@ def largestRectangleArea(heights: List[int]) -> int:
         start = i
         while stack and stack[-1][1] > h:
             index, height = stack.pop()
-            ans = max(ans, (i-index)*height)
+            ans = max(ans, (i - index) * height)
+            print(index, height, ans, h)
             start = index
         stack.append((start, h))
     return ans
 
 
-print(largestRectangleArea([2, 4]))
+print(largestRectangleArea([2, 1, 5, 6, 2, 3]))
