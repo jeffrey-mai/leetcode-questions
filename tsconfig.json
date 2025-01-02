@@ -5,6 +5,6 @@
     "strict": true,
     "esModuleInterop": true
   },
-  "include": ["**/*.ts"],
+  "include": ["**/*.ts", "easy/1941-check-if-all-characters-have-equal-number-of-occurrences.js"],
   "exclude": ["node_modules"]
 }
