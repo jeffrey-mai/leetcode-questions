@@ -1,7 +1,7 @@
 const compress = (chars) => {
   chars.push(null);
   let s = "", pointer = 0;
-
+  
   for(let i = 0; i < chars.length; i++){
     if(chars[pointer] !== chars[i]){
       if(i - pointer === 1) s += chars[pointer];
