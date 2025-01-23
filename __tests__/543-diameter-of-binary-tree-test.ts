@@ -1,4 +1,4 @@
-import diameterOfBinaryTree from '../easy/543-diameter-of-binary-tree';
+qimport diameterOfBinaryTree from '../easy/543-diameter-of-binary-tree';
 
 describe('543-diameter-of-binary-tree test', () => {
   class TreeNode {
