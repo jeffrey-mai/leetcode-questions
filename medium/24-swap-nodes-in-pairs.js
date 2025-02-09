@@ -11,8 +11,8 @@ var swapPairs = function(head) {
     let npn = cur.next.next;
     let second = cur.next;
 
-    second.next = cur;
     cur.next = npn;
+    second.next = cur;
     prev.next = second;
 
     prev = cur;
@@ -22,4 +22,9 @@ var swapPairs = function(head) {
   return dummy.next;    
 };
 
-console.log(swapPairs());
+const test = new ListNode(1);
+test.next = new ListNode(2);
+test.next.next = new ListNode(3);
+test.next.next.next = new ListNode(4);
+
+console.log(swapPairs(test));
