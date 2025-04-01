@@ -5,17 +5,17 @@ function TreeNode(val, left, right) {
 }
 
 var isSubtree = function(root, subRoot) {
-  const isSameTree = (p, q) => {
-    if (!p && !q) return true;
-    if (!p || !q) return false;
-    if (p.val !== q.val) return false;
-    return isSameTree(p.left, q.left) && isSameTree(p.right, q.right);
+  const isSameTree = (root, subRoot) => {
+    if (!root && !subRoot) return true;
+    if (!root || !subRoot) return false;
+    if (root.val !== subRoot.val) return false;
+    return isSameTree(root.left, subRoot.left) && isSameTree(root.right, subRoot.right);
   };
 
-  const helper = (p, q) => {
-    if (!p) return false;
-    if (isSameTree(p, q)) return true;
-    return helper(p.left, q) || helper(p.right, q);
+  const helper = (root, subRoot) => {
+    if (!root) return false;
+    if (isSameTree(root, subRoot)) return true;
+    return helper(root.left, subRoot) || helper(root.right, subRoot);
   };
 
   return helper(root, subRoot);
@@ -31,4 +31,4 @@ const input2 = new TreeNode(4);
 input2.left = new TreeNode(1);
 input2.right = new TreeNode(2);
 
-console.log(isSubtree(input));
+console.log(isSubtree(input, input2));
